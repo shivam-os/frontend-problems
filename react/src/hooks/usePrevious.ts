@@ -6,11 +6,11 @@ Reason: We first return the stored value, then update the ref with current value
 */
 
 export default function usePrevious<T>(value: T): T | undefined {
-	const valueRef = useRef<T | undefined>(undefined);
+    const valueRef = useRef<T | undefined>(undefined);
 
-	useEffect(() => {
-		valueRef.current = value;
-	}, [value]);
-	
-	return valueRef.current;
+    useEffect(() => {
+        valueRef.current = value;
+    }, [value]);
+
+    return valueRef.current;
 }
