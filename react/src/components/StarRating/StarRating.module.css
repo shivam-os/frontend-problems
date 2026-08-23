@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+}
+
+.container__star {
+    cursor: pointer;
+}
+
+.container__star--active {
+    color: gold;
+}

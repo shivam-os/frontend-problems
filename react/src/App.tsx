@@ -1,5 +1,7 @@
+import Dummy from "./components/Dummy";
+
 function App() {
-    return <></>;
+    return <><Dummy /></>;
 }
 
 export default App;
