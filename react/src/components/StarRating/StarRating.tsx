@@ -26,7 +26,7 @@ export default function StarRating(props: StarRatingProps) {
 
     const handleOnLeave = () => {
         setHoveredRating(0);
-    }
+    };
 
     return (
         <div className={styles["container"]}>
@@ -35,14 +35,17 @@ export default function StarRating(props: StarRatingProps) {
                 const isActive = starValue <= preferredStarRating;
                 const Star = isActive ? BsStarFill : BsStar;
 
-                return(
-                    <Star 
-                        className={clsx(styles["container__star"], isActive && styles["container__star--active"])}
+                return (
+                    <Star
+                        className={clsx(
+                            styles["container__star"],
+                            isActive && styles["container__star--active"],
+                        )}
                         onMouseEnter={() => handleOnHover(starValue)}
                         onMouseLeave={handleOnLeave}
-                        onClick={handleOnClick} 
+                        onClick={handleOnClick}
                     />
-                )
+                );
             })}
         </div>
     );

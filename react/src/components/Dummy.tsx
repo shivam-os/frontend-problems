@@ -1,18 +1,27 @@
 import { useState } from "react";
 import usePrevious from "../hooks/usePrevious";
-import StarRating from "./StarRating/StarRating";
+import cat1 from "../assets/cat-1.jpg";
+import cat2 from "../assets/cat-2.jpg";
+import cat3 from "../assets/cat-3.jpg";
+import cat4 from "../assets/cat-4.jpg";
+import cat5 from "../assets/cat-5.jpg";
+import Carousel from "./Carousel/Carousel";
+
+const IMAGES = [cat1, cat2, cat3, cat4, cat5];
 
 export default function Dummy() {
     const [count, setCount] = useState(0);
-    const [rating, setRating] = useState(2);
     const prevCount = usePrevious(count);
 
     return (
         <div>
-            {/* <h2>Count: {count}</h2>
-            <button onClick={() => setCount((prev) => prev + 1)}>Increment</button> */}
-            <StarRating value={rating} onChange={setRating} />
-            <p>Current rating: {rating}</p>
+            <div className="carousel__container">
+                <Carousel
+                    slides={IMAGES.map((image) => (
+                        <img src={image} />
+                    ))}
+                />
+            </div>
         </div>
     );
 }
