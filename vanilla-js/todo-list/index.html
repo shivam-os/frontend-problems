@@ -1,0 +1,33 @@
+<!--
+Design a todo list app with vanilla JS fulfilling the following requirements:
+- Functionality: Add, Edit, Delete any tasks
+- UI: Easy to use
+- Error handling: Handle errors gracefully
+- Code Quality: Well structured, readable & organized
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla Js Todo</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form class="input-container" id="tasks-form">
+        <input placeholder="Create a new task" id="tasks-input" />
+        <button type="submit">Create Task</button>
+    </form>
+    <ul class="tasks">
+        <li class="task-item">
+            <div class="task-item__title">Task 1</div>
+            <div class="task-item__actions">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
