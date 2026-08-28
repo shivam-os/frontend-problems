@@ -9,6 +9,8 @@ interface StarRatingProps {
     count?: number;
 }
 
+//TODO: Add precision prop, for fractional values
+
 export default function StarRating(props: StarRatingProps) {
     const { value, onChange, count = 5 } = props;
     const [hoveredRating, setHoveredRating] = useState(0);
