@@ -1,51 +1,46 @@
 import { useState } from "react";
+import { BsStar, BsStarFill } from "react-icons/bs";
 import clsx from "clsx";
 import styles from "./StarRating.module.css";
-import { BsStarFill, BsStar } from "react-icons/bs";
 
-interface StartRatingProps {
+interface StarRatingProps {
     value: number;
-    setValue: Function;
-    size?: number;
-    starsCount?: number;
+    onChange: (value: number) => void;
+    count?: number;
 }
 
-export default function StarRating(props: StartRatingProps) {
-    const { value, setValue, starsCount = 5 } = props;
-    const [hoverValue, setHoverValue] = useState(value);
-    const starsArr = new Array(starsCount).fill(0);
+export default function StarRating(props: StarRatingProps) {
+    const { value, onChange, count = 5 } = props;
+    const [hoveredRating, setHoveredRating] = useState(0);
+    const preferredStarRating = hoveredRating || value;
 
-    const handleStarHover = (idx: number) => {
-        setHoverValue(idx + 1);
+    const handleOnHover = (value: number) => {
+        setHoveredRating(value);
     };
 
-    const handleStarClick = (idx: number) => {
-        const updatedVal = idx + 1;
-        setHoverValue(updatedVal);
-        setValue(updatedVal);
+    const handleOnClick = () => {
+        onChange(hoveredRating);
     };
+
+    const handleOnLeave = () => {
+        setHoveredRating(0);
+    }
 
     return (
         <div className={styles["container"]}>
-            {starsArr.map((_, idx) => {
-                if (idx + 1 <= hoverValue)
-                    return (
-                        <BsStarFill
-                            onMouseOver={() => handleStarHover(idx)}
-                            onClick={() => handleStarClick(idx)}
-                            className={clsx(
-                                styles["container__star--active"],
-                                styles["container__star"],
-                            )}
-                        />
-                    );
-                return (
-                    <BsStar
-                        onMouseOver={() => handleStarHover(idx)}
-                        onClick={() => handleStarClick(idx)}
-                        className={styles["container__star"]}
+            {Array.from({ length: count }, (_, index) => {
+                const starValue = index + 1;
+                const isActive = starValue <= preferredStarRating;
+                const Star = isActive ? BsStarFill : BsStar;
+
+                return(
+                    <Star 
+                        className={clsx(styles["container__star"], isActive && styles["container__star--active"])}
+                        onMouseEnter={() => handleOnHover(starValue)}
+                        onMouseLeave={handleOnLeave}
+                        onClick={handleOnClick} 
                     />
-                );
+                )
             })}
         </div>
     );
