@@ -1,0 +1,21 @@
+.product-container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 400;
+    width: 300px;
+    background-color: gainsboro;
+    padding: 10px;
+}
+
+.product-card img {
+    width: 100%;
+}

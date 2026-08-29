@@ -6,6 +6,7 @@ import cat3 from "../assets/cat-3.jpg";
 import cat4 from "../assets/cat-4.jpg";
 import cat5 from "../assets/cat-5.jpg";
 import Carousel from "./Carousel/Carousel";
+import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 
 const IMAGES = [cat1, cat2, cat3, cat4, cat5];
 
@@ -15,13 +16,7 @@ export default function Dummy() {
 
     return (
         <div>
-            <div className="carousel__container">
-                <Carousel
-                    slides={IMAGES.map((image) => (
-                        <img src={image} />
-                    ))}
-                />
-            </div>
+            <InfiniteScroll />
         </div>
     );
 }
