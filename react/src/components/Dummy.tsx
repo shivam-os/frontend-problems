@@ -9,6 +9,7 @@ import Carousel from "./Carousel/Carousel";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 import ProgressBar from "./ProgressBar/ProgressBar";
 import Stopwatch from "./Stopwatch/Stopwatch";
+import DigitalClock from "./DigitalClock/DigitalClock";
 
 const IMAGES = [cat1, cat2, cat3, cat4, cat5];
 
@@ -23,7 +24,8 @@ export default function Dummy() {
         <div>
             {/* <InfiniteScroll /> */}
             {/* <ProgressBar initial={10} max={100} onStart={handleStart} onComplete={handleComplete} /> */}
-            <Stopwatch />
+            {/* <Stopwatch /> */}
+            <DigitalClock />
         </div>
     );
 }
