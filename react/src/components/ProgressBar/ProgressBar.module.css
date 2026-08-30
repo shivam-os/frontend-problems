@@ -1,0 +1,25 @@
+.bar {
+    border: 2px solid black;
+    height: 20px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar__inner {
+    height: 20px;
+    background-color: burlywood;
+    transition: width 200ms ease-in;
+    position: absolute;
+    /* width: 100%;
+    transition: transform 200ms ease-in; */
+}
+
+.bar__value {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
