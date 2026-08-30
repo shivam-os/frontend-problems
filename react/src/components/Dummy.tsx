@@ -8,6 +8,7 @@ import cat5 from "../assets/cat-5.jpg";
 import Carousel from "./Carousel/Carousel";
 import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 import ProgressBar from "./ProgressBar/ProgressBar";
+import Stopwatch from "./Stopwatch/Stopwatch";
 
 const IMAGES = [cat1, cat2, cat3, cat4, cat5];
 
@@ -21,7 +22,8 @@ export default function Dummy() {
     return (
         <div>
             {/* <InfiniteScroll /> */}
-            <ProgressBar initial={10} max={100} onStart={handleStart} onComplete={handleComplete} />
+            {/* <ProgressBar initial={10} max={100} onStart={handleStart} onComplete={handleComplete} /> */}
+            <Stopwatch />
         </div>
     );
 }

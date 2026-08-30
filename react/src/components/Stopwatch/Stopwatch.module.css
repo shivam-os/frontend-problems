@@ -1,0 +1,9 @@
+.timer-display {
+    display: flex;
+    gap: 5px;
+}
+
+.timer-actions {
+    display: flex;
+    gap: 10px;
+}
