@@ -10,6 +10,7 @@ import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 import ProgressBar from "./ProgressBar/ProgressBar";
 import Stopwatch from "./Stopwatch/Stopwatch";
 import DigitalClock from "./DigitalClock/DigitalClock";
+import EditableTimer from "./EditableTimer/EditableTimer";
 
 const IMAGES = [cat1, cat2, cat3, cat4, cat5];
 
@@ -25,7 +26,8 @@ export default function Dummy() {
             {/* <InfiniteScroll /> */}
             {/* <ProgressBar initial={10} max={100} onStart={handleStart} onComplete={handleComplete} /> */}
             {/* <Stopwatch /> */}
-            <DigitalClock />
+            {/* <DigitalClock /> */}
+            <EditableTimer />
         </div>
     );
 }
