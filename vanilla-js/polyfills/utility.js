@@ -26,3 +26,8 @@ function throttleV2(cb, delay = 500) {
         timer = setTimeout(() => timer = undefined, delay);
     }
 }
+
+// 3. Sleep utility (which can be used to pause the execution of a function)
+function sleep(delay = 1000) {
+    return new Promise((res) => setTimeout(res, delay));
+}
